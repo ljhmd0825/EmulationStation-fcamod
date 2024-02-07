@@ -648,7 +648,7 @@ void GuiMenu::openThemeConfiguration(Window* mWindow, GuiComponent* s, std::shar
 			auto mViews = theme->getViewsOfTheme();
 			for (auto it = mViews.cbegin(); it != mViews.cend(); ++it)
 			{
-				if (it->first == "basic" || it->first == "detailed" || it->first == "grid")
+				if (it->first == "basic" || it->first == "detailed" || it->first == "video" || it->first == "grid")
 					styles.push_back(std::pair<std::string, std::string>(it->first, _(it->first.c_str())));
 				else
 					styles.push_back(*it);
@@ -658,6 +658,7 @@ void GuiMenu::openThemeConfiguration(Window* mWindow, GuiComponent* s, std::shar
 		{
 			styles.push_back(std::pair<std::string, std::string>("basic", _("basic")));
 			styles.push_back(std::pair<std::string, std::string>("detailed", _("detailed")));
+			styles.push_back(std::pair<std::string, std::string>("video", _("video")));
 		}
 
 		auto viewPreference = systemTheme.empty() ? Settings::getInstance()->getString("GamelistViewStyle") : system->getSystemViewMode();
